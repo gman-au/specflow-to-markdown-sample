@@ -28,7 +28,7 @@ jobs:
       run: dotnet test $SOLUTION_PATH --no-restore --verbosity normal --logger "trx;LogFileName=test-results.trx"
     - name: Run SpecFlow To Markdown Tool
       if: always()
-      run: /github/home/.dotnet/tools/specflow-to-markdown ./ My.Test.Library.N.Unit.Tests.dll ./ TestExecution.json ./MARKDOWN_TEST_SUMMARY.md
+      run: specflow-to-markdown ./ My.Test.Library.N.Unit.Tests.dll ./ TestExecution.json ./MARKDOWN_TEST_SUMMARY.md
     - name: Checks action
       uses: LouisBrunner/checks-action@v2.0.0
       if: always()

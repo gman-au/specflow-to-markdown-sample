@@ -4,6 +4,6 @@ namespace My.Test.Library.Domain.Services
 {
     public interface IRequestValidator
     {
-        Task<ValidationResponse> ValidateAsync(BookingRequest request);
+        ValidationResponse Validate(BookingRequest request);
     }
 }

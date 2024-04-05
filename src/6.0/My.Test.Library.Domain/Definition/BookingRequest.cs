@@ -1,4 +1,6 @@
-﻿namespace My.Test.Library.Domain.Definition
+﻿using System;
+
+namespace My.Test.Library.Domain.Definition
 {
     public class BookingRequest
     {

@@ -7,5 +7,7 @@
         public string ConfirmationCode { get; set; }
         
         public int TicketsPurchased { get; set; }
+        
+        public bool IsSuccess { get; set; }
     }
 }

@@ -4,9 +4,29 @@ namespace My.Test.Library.Domain.Services
 {
     public class MyRequestValidator : IRequestValidator
     {
-        public Task<ValidationResponse> ValidateAsync(BookingRequest request)
+        public ValidationResponse Validate(BookingRequest request)
         {
-            throw new NotImplementedException();
+            var response = new ValidationResponse
+            {
+                IsValid = true,
+                Message = null
+            };
+
+            if (string.IsNullOrEmpty(request.FirstName))
+            {
+                response.IsValid = false;
+                response.Message = MessageConstants.InvalidFirstName;
+                return response;
+            }
+            
+            if (request.NumberOfTickets <= 0)
+            {
+                response.IsValid = false;
+                response.Message = MessageConstants.InvalidTicketAmount;
+                return response;
+            }
+
+            return response;
         }
     }
 }

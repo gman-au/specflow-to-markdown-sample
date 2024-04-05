@@ -4,6 +4,8 @@ namespace My.Test.Library.Domain.Services
 {
     public class MyRequestValidator : IRequestValidator
     {
+        private const string BlacklistedBuyer = "Mary Sue";
+        
         public ValidationResponse Validate(BookingRequest request)
         {
             var response = new ValidationResponse
@@ -26,6 +28,15 @@ namespace My.Test.Library.Domain.Services
                 return response;
             }
 
+            var fullName = $"{request.FirstName} {request.LastName}";
+            
+            if (fullName == BlacklistedBuyer)
+            {
+                response.IsValid = false;
+                response.Message = "Buyer is blacklisted";
+                return response;
+            }
+                
             return response;
         }
     }

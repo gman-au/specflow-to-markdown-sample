@@ -56,7 +56,7 @@ namespace My.Test.Library.Domain.Services
                 response.IsSuccess = false;
                 return response;
             }
-
+            
             if (requestedEvent.TicketsRemaining < request.NumberOfTickets)
             {
                 var tickets = 

@@ -17,9 +17,9 @@ namespace My.Test.Library.N.Unit.Tests.Steps
         private readonly IFixture _fixture;
         private readonly Mock<IRequestValidator> _requestValidator;
         private readonly MyBookingService _sut;
+        private readonly Event _returnedEvent;
         private BookingRequest _request;
         private BookingResponse _response;
-        private Event _returnedEvent;
 
         public BookingServiceSteps()
         {
@@ -156,6 +156,12 @@ namespace My.Test.Library.N.Unit.Tests.Steps
                     );
 
             _returnedEvent.Status = statusValue;
+        }
+
+        [Then(@"the booking test should be inconclusive")]
+        public void ThenTheBookingTestShouldBeInconclusive()
+        {
+            ScenarioContext.StepIsPending();
         }
     }
 }

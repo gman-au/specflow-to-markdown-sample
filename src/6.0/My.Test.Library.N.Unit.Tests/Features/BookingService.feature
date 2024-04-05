@@ -45,3 +45,9 @@ Basic booking service that takes a booking request, validates it for correctness
         Then the booking request should succeed
         And the response should indicate 5 tickets were purchased
         And the response message should be "Success - 5 tickets were purchased"
+
+    @event
+    Scenario: An inconclusive test
+        Given the request is valid
+        When the booking request is made
+        Then the booking test should be inconclusive

@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Threading.Tasks;
 using My.Test.Library.Domain.Definition;
 using My.Test.Library.Domain.Services;
 using NUnit.Framework;
+using TechTalk.SpecFlow.Assist;
 
 namespace My.Test.Library.N.Unit.Tests.Steps
 {
     [Binding]
     public class RequestValidatorSteps
     {
+        private const string SkipForTheEmperor = "Emperor";
+
         private readonly MyRequestValidator _sut;
         private BookingRequest _request;
         private ValidationResponse _response;
@@ -25,7 +27,6 @@ namespace My.Test.Library.N.Unit.Tests.Steps
             _request =
                 new BookingRequest
                 {
-                    Referrer = ReferrerEnum.NotSpecified,
                     FirstName = "John",
                     LastName = "Smith",
                     EventCode = Guid.NewGuid(),
@@ -45,6 +46,12 @@ namespace My.Test.Library.N.Unit.Tests.Steps
         public void ThenTheValidationRequestShouldFail()
         {
             Assert.False(_response.IsValid);
+        }
+
+        [Then(@"the validation request should succeed")]
+        public void ThenTheValidationRequestShouldSucceed()
+        {
+            Assert.True(_response.IsValid);
         }
 
         [Then(@"the error message should be ""(.*)""")]
@@ -67,6 +74,51 @@ namespace My.Test.Library.N.Unit.Tests.Steps
         public void GivenTheRequestContainsTickets(int tickets)
         {
             _request.NumberOfTickets = tickets;
+        }
+
+        [Given(@"a request has been created as follows:")]
+        public void GivenARequestHasBeenCreatedAsFollows(TableRow table)
+        {
+            var request =
+                table
+                    .CreateInstance<BookingRequest>();
+
+            _request =
+                new BookingRequest
+                {
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
+                    EventCode = Guid.NewGuid(),
+                    NumberOfTickets = request.NumberOfTickets
+                };
+        }
+
+        [Then(@"there should be no error message")]
+        public void ThenThereShouldBeNoErrorMessage()
+        {
+            Assert
+                .Null(_response.Message);
+        }
+
+        [Given(@"the first name is set to (.*)")]
+        public void GivenTheFirstNameIsSetTo(string value) => _request.FirstName = value;
+
+        [Given(@"the last name is set to (.*)")]
+        public void GivenTheLastNameIsSetTo(string value)
+        {
+            if (value == SkipForTheEmperor)
+                ScenarioContext.StepIsPending();
+            
+            _request.LastName = value;
+        }
+
+        [Given(@"the tickets requested are set to (.*)")]
+        public void GivenTheTicketsRequestedAreSetTo(int  value) => _request.NumberOfTickets = value;
+
+        [Then(@"the validation test should be inconclusive")]
+        public void ThenTheValidationTestShouldBeInconclusive()
+        {
+            ScenarioContext.StepIsPending();
         }
     }
 }

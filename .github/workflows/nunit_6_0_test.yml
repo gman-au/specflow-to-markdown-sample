@@ -1,0 +1,41 @@
+name: Run Automated Tests
+
+on:
+  push:
+    branches: [ master ] 
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    env:
+      MAJOR_VERSION: 6
+      MINOR_VERSION: 0
+      SOLUTION_PATH: ./src/6.0/
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x    
+    - name: Remove annotations
+      run: echo "::remove-matcher owner=csc::"
+    - name: Install specflow-to-markdown tool
+      run: dotnet tool install -g Gman.SpecFlowToMarkdown  
+    - name: Restore dependencies
+      run: dotnet restore $SOLUTION_PATH
+    - name: Build
+      run: dotnet build $SOLUTION_PATH --no-restore --ignore-failed-sources -c Release
+    - name: Test
+      run: dotnet test $SOLUTION_PATH --no-restore --verbosity normal --logger "trx;LogFileName=test-results.trx"
+    - name: Run SpecFlow To Markdown Tool
+      if: always()
+      run: /github/home/.dotnet/tools/specflow-to-markdown ./ My.Test.Library.N.Unit.Tests.dll ./ TestExecution.json ./MARKDOWN_TEST_SUMMARY.md
+    - name: Checks action
+      uses: LouisBrunner/checks-action@v2.0.0
+      if: always()
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: SpecFlow Test Summary (nUnit 6.0)
+        conclusion: ${{ job.status }}
+        output: |
+          {"summary":"${{ steps.test.outputs.summary }}"}
+        output_text_description_file: ./MARKDOWN_TEST_SUMMARY.md

@@ -91,7 +91,8 @@ namespace My.Test.Library.X.Unit.Tests.Features
             string[] tagsOfScenario = new string[] {
                     "validation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid request", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid request", "    Background: an invalid response is returned from the (mocked) request validat" +
+                    "or interface", tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,16 +113,16 @@ namespace My.Test.Library.X.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 8
         testRunner.Given("the request has a validation failure of \"Something failed validation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 9
         testRunner.When("the booking request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 10
         testRunner.Then("the booking request should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 9
+#line 11
         testRunner.And("the response message should be \"Error - Something failed validation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -140,7 +141,7 @@ namespace My.Test.Library.X.Unit.Tests.Features
                     "event"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Event cancelled", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 12
+#line 15
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -160,22 +161,22 @@ namespace My.Test.Library.X.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 13
+#line 16
         testRunner.Given("the request is valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 14
+#line 17
         testRunner.And("the request asks for 2 tickets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 15
+#line 18
         testRunner.And("the requested event is \"Cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 19
         testRunner.When("the booking request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 20
         testRunner.Then("the booking request should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 18
+#line 21
         testRunner.And("the response message should be \"Error - Event is cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -192,7 +193,7 @@ namespace My.Test.Library.X.Unit.Tests.Features
                     "tickets"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No tickets left", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 24
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -212,22 +213,22 @@ namespace My.Test.Library.X.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 22
+#line 25
         testRunner.Given("the request is valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 26
         testRunner.And("the request asks for 2 tickets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 27
         testRunner.And("the requested event has 0 tickets left", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 28
         testRunner.When("the booking request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 26
+#line 29
         testRunner.Then("the booking request should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 27
+#line 30
         testRunner.And("the response message should be \"Error - Event is fully booked\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -244,7 +245,7 @@ namespace My.Test.Library.X.Unit.Tests.Features
                     "tickets"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Some tickets left", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 30
+#line 33
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -264,25 +265,25 @@ namespace My.Test.Library.X.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 31
+#line 34
         testRunner.Given("the request is valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 32
+#line 35
         testRunner.And("the request asks for 20 tickets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 33
+#line 36
         testRunner.And("the requested event has 10 tickets left", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 34
+#line 37
         testRunner.When("the booking request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 38
         testRunner.Then("the booking request should succeed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 36
+#line 39
         testRunner.And("the response should indicate 10 tickets were purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 40
         testRunner.And("the response message should be \"Partial Success - 10 tickets were purchased\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -301,7 +302,7 @@ namespace My.Test.Library.X.Unit.Tests.Features
                     "happyPath"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tickets purchased", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 40
+#line 44
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -321,25 +322,25 @@ namespace My.Test.Library.X.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 41
+#line 45
         testRunner.Given("the request is valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 42
+#line 46
         testRunner.And("the request asks for 5 tickets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 43
+#line 47
         testRunner.And("the requested event has 10 tickets left", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 44
+#line 48
         testRunner.When("the booking request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 45
+#line 49
         testRunner.Then("the booking request should succeed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 46
+#line 50
         testRunner.And("the response should indicate 5 tickets were purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 47
+#line 51
         testRunner.And("the response message should be \"Success - 5 tickets were purchased\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -356,7 +357,7 @@ namespace My.Test.Library.X.Unit.Tests.Features
                     "event"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("An inconclusive test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 50
+#line 54
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -376,13 +377,13 @@ namespace My.Test.Library.X.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 51
+#line 55
         testRunner.Given("the request is valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 52
+#line 56
         testRunner.When("the booking request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 53
+#line 57
         testRunner.Then("the booking test should be inconclusive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

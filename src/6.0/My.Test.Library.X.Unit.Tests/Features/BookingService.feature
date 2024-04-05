@@ -3,12 +3,15 @@ Basic booking service that takes a booking request, validates it for correctness
 
     @validation
     Scenario: Invalid request
+
+    Background: an invalid response is returned from the (mocked) request validator interface
         Given the request has a validation failure of "Something failed validation"
         When the booking request is made
         Then the booking request should fail
         And the response message should be "Error - Something failed validation"
 
-    @tickets @event
+    @tickets
+    @event
     Scenario: Event cancelled
         Given the request is valid
         And the request asks for 2 tickets
@@ -36,7 +39,8 @@ Basic booking service that takes a booking request, validates it for correctness
         And the response should indicate 10 tickets were purchased
         And the response message should be "Partial Success - 10 tickets were purchased"
 
-    @tickets @happyPath
+    @tickets
+    @happyPath
     Scenario: Tickets purchased
         Given the request is valid
         And the request asks for 5 tickets

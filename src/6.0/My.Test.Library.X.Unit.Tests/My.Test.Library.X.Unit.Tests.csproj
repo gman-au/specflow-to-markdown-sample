@@ -22,6 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Standard\My.Test.Library.Domain\My.Test.Library.Domain.csproj" />
       <ProjectReference Include="..\My.Test.Library.Domain\My.Test.Library.Domain.csproj" />
     </ItemGroup>
 

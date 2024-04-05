@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.Test.Library.Domain", "My.Test.Library.Domain\My.Test.Library.Domain.csproj", "{1CECED12-2B89-42E0-BA56-0F0C6D28A5AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.Test.Library.Domain", "..\Standard\My.Test.Library.Domain\My.Test.Library.Domain.csproj", "{1CECED12-2B89-42E0-BA56-0F0C6D28A5AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.Test.Library.N.Unit.Tests", "My.Test.Library.N.Unit.Tests\My.Test.Library.N.Unit.Tests.csproj", "{95D6512B-3DDE-4459-9BDF-9844361F0CFE}"
 EndProject

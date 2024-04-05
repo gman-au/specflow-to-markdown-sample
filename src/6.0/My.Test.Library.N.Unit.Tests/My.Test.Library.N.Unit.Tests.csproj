@@ -18,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\My.Test.Library.Domain\My.Test.Library.Domain.csproj" />
+      <ProjectReference Include="..\..\Standard\My.Test.Library.Domain\My.Test.Library.Domain.csproj" />
     </ItemGroup>
 
 </Project>

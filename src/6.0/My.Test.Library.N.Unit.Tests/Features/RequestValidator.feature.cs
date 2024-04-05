@@ -35,7 +35,9 @@ namespace My.Test.Library.N.Unit.Tests.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "RequestValidator", "Simple calculator for adding two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "RequestValidator", @"**This is feature text** which supports markdown
+You can find some additional SpecFlow markdown documentation [here](https://docs.specflow.org/projects/specflow-livingdoc/en/latest/Generating/Markdown-and-Embedding-Images.html)
+![Image](https://cdn.britannica.com/87/189187-050-C6C16A3B/Smithsonian-Institution-building-Castle-1855.jpg?w=400&h=300&c=crop)", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,7 +84,7 @@ namespace My.Test.Library.N.Unit.Tests.Features
                     "validation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid booking name", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+#line 7
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,19 +104,19 @@ namespace My.Test.Library.N.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 8
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 9
         testRunner.And("the request has an invalid first name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 8
+#line 10
         testRunner.When("the validation request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 11
         testRunner.Then("the validation request should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 10
+#line 12
         testRunner.And("the error message should be \"Please supply a valid first name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -132,7 +134,7 @@ namespace My.Test.Library.N.Unit.Tests.Features
                     "tickets"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid tickets requested", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 14
+#line 16
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -152,19 +154,19 @@ namespace My.Test.Library.N.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 15
+#line 17
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 16
+#line 18
         testRunner.And("the request contains 0 tickets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 19
         testRunner.When("the validation request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 20
         testRunner.Then("the validation request should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 19
+#line 21
         testRunner.And("the error message should be \"Please specify a number of tickets greater than zero" +
                         "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -190,7 +192,7 @@ namespace My.Test.Library.N.Unit.Tests.Features
             argumentsOfScenario.Add("last_name", last_Name);
             argumentsOfScenario.Add("number_of_tickets", number_Of_Tickets);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Various request scenarios", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 23
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -210,25 +212,25 @@ namespace My.Test.Library.N.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 22
+#line 24
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 25
         testRunner.And(string.Format("the first name is set to {0}", first_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 26
         testRunner.And(string.Format("the last name is set to {0}", last_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 27
         testRunner.And(string.Format("the tickets requested are set to {0}", number_Of_Tickets), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 28
         testRunner.When("the validation request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
+#line 29
         testRunner.Then("the validation request should succeed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 28
+#line 30
         testRunner.And("there should be no error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -244,7 +246,7 @@ namespace My.Test.Library.N.Unit.Tests.Features
                     "tickets"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("An inconclusive test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 42
+#line 44
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -264,13 +266,13 @@ namespace My.Test.Library.N.Unit.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 43
+#line 45
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 44
+#line 46
         testRunner.When("the validation request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 45
+#line 47
         testRunner.Then("the validation test should be inconclusive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

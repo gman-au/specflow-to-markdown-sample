@@ -1,5 +1,7 @@
 ﻿Feature: RequestValidator
-Simple calculator for adding two numbers
+**This is feature text** which supports markdown
+You can find some additional SpecFlow markdown documentation [here](https://docs.specflow.org/projects/specflow-livingdoc/en/latest/Generating/Markdown-and-Embedding-Images.html)
+![Image](https://cdn.britannica.com/87/189187-050-C6C16A3B/Smithsonian-Institution-building-Castle-1855.jpg?w=400&h=300&c=crop)
 
     @validation
     Scenario: Invalid booking name

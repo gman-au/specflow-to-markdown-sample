@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.Test.Library.Domain", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.Test.Library.N.Unit.Tests", "My.Test.Library.N.Unit.Tests\My.Test.Library.N.Unit.Tests.csproj", "{95D6512B-3DDE-4459-9BDF-9844361F0CFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.Test.Library.X.Unit.Tests", "My.Test.Library.X.Unit.Tests\My.Test.Library.X.Unit.Tests.csproj", "{1E871503-BBE5-4029-877F-4EC31E2AAF17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{95D6512B-3DDE-4459-9BDF-9844361F0CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D6512B-3DDE-4459-9BDF-9844361F0CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95D6512B-3DDE-4459-9BDF-9844361F0CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E871503-BBE5-4029-877F-4EC31E2AAF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E871503-BBE5-4029-877F-4EC31E2AAF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E871503-BBE5-4029-877F-4EC31E2AAF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E871503-BBE5-4029-877F-4EC31E2AAF17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

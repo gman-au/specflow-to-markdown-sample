@@ -22,7 +22,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
 
     Scenario: Various request scenarios
         Given a request has been created
-        And the first name is set to <first_name>
+        And the first name is set to <first_name> with <unused_variable> not being used
         And the last name is set to <last_name>
         And the tickets requested are set to <number_of_tickets>
         When the validation request is made
@@ -30,15 +30,15 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         And there should be no error message
 
     Examples:
-      | first_name | last_name | number_of_tickets |
-      | John       | Smith     | 10                |
-      | Paul       | Jones     | 15                |
-      | Mary       | Sue       | 1                 |
-      | Alex       | McCain    | 1                 |
-      | Mary       | Jones     | 100               |
-      | The        | Emperor   | 1                 |
-      | Cole       | Stevens   | 42                |
-      | Jack       | Smith     | 5                 |
+      | first_name | last_name | number_of_tickets | unused_variable |
+      | John       | Smith     | 10                | 12              |
+      | Paul       | Jones     | 15                | 13              |
+      | Mary       | Sue       | 1                 | 14              |
+      | Alex       | McCain    | 1                 | 15              |
+      | Mary       | Jones     | 100               | 43              |
+      | The        | Emperor   | 1                 | 42              |
+      | Cole       | Stevens   | 42                | 41              |
+      | Jack       | Smith     | 5                 | 40              |
 
     @tickets
     Scenario: An inconclusive test

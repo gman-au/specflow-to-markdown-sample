@@ -186,21 +186,22 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Xunit.SkippableTheoryAttribute(DisplayName="Various request scenarios")]
         [Xunit.TraitAttribute("FeatureTitle", "RequestValidator")]
         [Xunit.TraitAttribute("Description", "Various request scenarios")]
-        [Xunit.InlineDataAttribute("John", "Smith", "10", new string[0])]
-        [Xunit.InlineDataAttribute("Paul", "Jones", "15", new string[0])]
-        [Xunit.InlineDataAttribute("Mary", "Sue", "1", new string[0])]
-        [Xunit.InlineDataAttribute("Alex", "McCain", "1", new string[0])]
-        [Xunit.InlineDataAttribute("Mary", "Jones", "100", new string[0])]
-        [Xunit.InlineDataAttribute("The", "Emperor", "1", new string[0])]
-        [Xunit.InlineDataAttribute("Cole", "Stevens", "42", new string[0])]
-        [Xunit.InlineDataAttribute("Jack", "Smith", "5", new string[0])]
-        public virtual void VariousRequestScenarios(string first_Name, string last_Name, string number_Of_Tickets, string[] exampleTags)
+        [Xunit.InlineDataAttribute("John", "Smith", "10", "12", new string[0])]
+        [Xunit.InlineDataAttribute("Paul", "Jones", "15", "13", new string[0])]
+        [Xunit.InlineDataAttribute("Mary", "Sue", "1", "14", new string[0])]
+        [Xunit.InlineDataAttribute("Alex", "McCain", "1", "15", new string[0])]
+        [Xunit.InlineDataAttribute("Mary", "Jones", "100", "43", new string[0])]
+        [Xunit.InlineDataAttribute("The", "Emperor", "1", "42", new string[0])]
+        [Xunit.InlineDataAttribute("Cole", "Stevens", "42", "41", new string[0])]
+        [Xunit.InlineDataAttribute("Jack", "Smith", "5", "40", new string[0])]
+        public virtual void VariousRequestScenarios(string first_Name, string last_Name, string number_Of_Tickets, string unused_Variable, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("first_name", first_Name);
             argumentsOfScenario.Add("last_name", last_Name);
             argumentsOfScenario.Add("number_of_tickets", number_Of_Tickets);
+            argumentsOfScenario.Add("unused_variable", unused_Variable);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Various request scenarios", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 23
     this.ScenarioInitialize(scenarioInfo);
@@ -226,7 +227,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 25
-        testRunner.And(string.Format("the first name is set to {0}", first_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And(string.Format("the first name is set to {0} with {1} not being used", first_Name, unused_Variable), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
         testRunner.And(string.Format("the last name is set to {0}", last_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

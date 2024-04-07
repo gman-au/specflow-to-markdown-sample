@@ -1,4 +1,4 @@
-name: Run Automated Tests
+name: Run Automated Tests (xUnit)
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
       run: dotnet test $SOLUTION_PATH --no-restore --verbosity normal --logger "trx;LogFileName=test-results.trx"
     - name: Run SpecFlow To Markdown Tool
       if: always()
-      run: specflow-to-markdown ./ My.Test.Library.X.Unit.Tests.dll ./ TestExecution.json ./MARKDOWN_TEST_SUMMARY.md
+      run: specflow-to-markdown ./ My.Test.Library.X.Unit.Tests.dll ./ TestExecution.json ./X_MARKDOWN_TEST_SUMMARY.md
     - name: Checks action
       uses: LouisBrunner/checks-action@v2.0.0
       if: always()
@@ -38,4 +38,4 @@ jobs:
         conclusion: ${{ job.status }}
         output: |
           {"summary":"${{ steps.test.outputs.summary }}"}
-        output_text_description_file: ./MARKDOWN_TEST_SUMMARY.md
+        output_text_description_file: ./X_MARKDOWN_TEST_SUMMARY.md

@@ -22,7 +22,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
 
     Scenario: Various request scenarios
         Given a request has been created
-        And the first name is set to <first_name> with <unused_variable> not being used
+        And the first name is set to <first_name> with neither <unused_variable_1> nor <unused_variable_2> being used
         And the last name is set to <last_name>
         And the tickets requested are set to <number_of_tickets>
         When the validation request is made
@@ -30,15 +30,15 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         And there should be no error message
 
     Examples:
-      | first_name | last_name | number_of_tickets | unused_variable |
-      | John       | Smith     | 10                | 12              |
-      | Paul       | Jones     | 15                | 13              |
-      | Mary       | Sue       | 1                 | 14              |
-      | Alex       | McCain    | 1                 | 15              |
-      | Mary       | Jones     | 100               | 43              |
-      | The        | Emperor   | 1                 | 42              |
-      | Cole       | Stevens   | 42                | 41              |
-      | Jack       | Smith     | 5                 | 40              |
+      | first_name | last_name | number_of_tickets | unused_variable_1 | unused_variable_2 |
+      | John       | Smith     | 10                | 12                | 1                 |
+      | Paul       | Jones     | 15                | 13                | 1                 |
+      | Mary       | Sue       | 1                 | 14                | 1                 |
+      | Alex       | McCain    | 1                 | 15                | 1                 |
+      | Mary       | Jones     | 100               | 43                | 1                 |
+      | The        | Emperor   | 1                 | 42                | 1                 |
+      | Cole       | Stevens   | 42                | 41                | 1                 |
+      | Jack       | Smith     | 5                 | 40                | 1                 |
 
     @tickets
     Scenario: An inconclusive test

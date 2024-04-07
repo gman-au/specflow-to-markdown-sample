@@ -100,8 +100,8 @@ namespace My.Test.Library.X.Unit.Tests.Steps
                 .Null(_response.Message);
         }
 
-        [Given(@"the first name is set to (.*) with (.*) not being used")]
-        public void GivenTheFirstNameIsSetTo(string value, string unused) => _request.FirstName = value;
+        [Given(@"the first name is set to (.*) with neither (.*) nor (.*) being used")]
+        public void GivenTheFirstNameIsSetTo(string value, string unused_1, string unused_2) => _request.FirstName = value;
 
         [Given(@"the last name is set to (.*)")]
         public void GivenTheLastNameIsSetTo(string value)

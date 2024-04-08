@@ -18,11 +18,6 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\Standard\My.Test.Library.Domain\My.Test.Library.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>

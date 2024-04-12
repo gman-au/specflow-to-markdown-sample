@@ -176,7 +176,14 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         
         public virtual void VariousRequestScenarios(string first_Name, string last_Name, string number_Of_Tickets, string unused_Variable_1, string unused_Variable_2, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "validation",
+                    "isolated"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("first_name", first_Name);
             argumentsOfScenario.Add("last_name", last_Name);
@@ -184,7 +191,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
             argumentsOfScenario.Add("unused_variable_1", unused_Variable_1);
             argumentsOfScenario.Add("unused_variable_2", unused_Variable_2);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Various request scenarios", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 23
+#line 24
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -194,25 +201,25 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
             else
             {
                 this.ScenarioStart();
-#line 24
+#line 25
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 25
+#line 26
         testRunner.And(string.Format("the first name is set to {0} with neither {1} nor {2} being used", first_Name, unused_Variable_1, unused_Variable_2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 27
         testRunner.And(string.Format("the last name is set to {0}", last_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
+#line 28
         testRunner.And(string.Format("the tickets requested are set to {0}", number_Of_Tickets), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 28
+#line 29
         testRunner.When("the validation request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 30
         testRunner.Then("the validation request should succeed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 30
+#line 31
         testRunner.And("there should be no error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -222,6 +229,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Various request scenarios: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RequestValidator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("validation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("isolated")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:first_name", "John")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_name", "Smith")]
@@ -230,7 +239,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:unused_variable_2", "1")]
         public void VariousRequestScenarios_Variant0()
         {
-#line 23
+#line 24
     this.VariousRequestScenarios("John", "Smith", "10", "12", "1", ((string[])(null)));
 #line hidden
         }
@@ -238,6 +247,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Various request scenarios: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RequestValidator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("validation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("isolated")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:first_name", "Paul")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_name", "Jones")]
@@ -246,7 +257,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:unused_variable_2", "1")]
         public void VariousRequestScenarios_Variant1()
         {
-#line 23
+#line 24
     this.VariousRequestScenarios("Paul", "Jones", "15", "13", "1", ((string[])(null)));
 #line hidden
         }
@@ -254,6 +265,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Various request scenarios: Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RequestValidator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("validation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("isolated")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:first_name", "Mary")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_name", "Sue")]
@@ -262,7 +275,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:unused_variable_2", "1")]
         public void VariousRequestScenarios_Variant2()
         {
-#line 23
+#line 24
     this.VariousRequestScenarios("Mary", "Sue", "1", "14", "1", ((string[])(null)));
 #line hidden
         }
@@ -270,6 +283,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Various request scenarios: Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RequestValidator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("validation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("isolated")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:first_name", "Alex")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_name", "McCain")]
@@ -278,7 +293,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:unused_variable_2", "1")]
         public void VariousRequestScenarios_Variant3()
         {
-#line 23
+#line 24
     this.VariousRequestScenarios("Alex", "McCain", "1", "15", "1", ((string[])(null)));
 #line hidden
         }
@@ -286,6 +301,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Various request scenarios: Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RequestValidator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("validation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("isolated")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:first_name", "Mary")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_name", "Jones")]
@@ -294,7 +311,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:unused_variable_2", "1")]
         public void VariousRequestScenarios_Variant4()
         {
-#line 23
+#line 24
     this.VariousRequestScenarios("Mary", "Jones", "100", "43", "1", ((string[])(null)));
 #line hidden
         }
@@ -302,6 +319,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Various request scenarios: Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RequestValidator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("validation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("isolated")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:first_name", "The")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_name", "Emperor")]
@@ -310,7 +329,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:unused_variable_2", "1")]
         public void VariousRequestScenarios_Variant5()
         {
-#line 23
+#line 24
     this.VariousRequestScenarios("The", "Emperor", "1", "42", "1", ((string[])(null)));
 #line hidden
         }
@@ -318,6 +337,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Various request scenarios: Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RequestValidator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("validation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("isolated")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:first_name", "Cole")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_name", "Stevens")]
@@ -326,7 +347,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:unused_variable_2", "1")]
         public void VariousRequestScenarios_Variant6()
         {
-#line 23
+#line 24
     this.VariousRequestScenarios("Cole", "Stevens", "42", "41", "1", ((string[])(null)));
 #line hidden
         }
@@ -334,6 +355,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Various request scenarios: Variant 7")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RequestValidator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("validation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("isolated")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 7")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:first_name", "Jack")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_name", "Smith")]
@@ -342,7 +365,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:unused_variable_2", "1")]
         public void VariousRequestScenarios_Variant7()
         {
-#line 23
+#line 24
     this.VariousRequestScenarios("Jack", "Smith", "5", "40", "1", ((string[])(null)));
 #line hidden
         }
@@ -357,7 +380,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
                     "tickets"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("An inconclusive test", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 44
+#line 45
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -367,13 +390,13 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
             else
             {
                 this.ScenarioStart();
-#line 45
+#line 46
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 46
+#line 47
         testRunner.When("the validation request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 47
+#line 48
         testRunner.Then("the validation test should be inconclusive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

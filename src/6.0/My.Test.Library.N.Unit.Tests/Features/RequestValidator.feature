@@ -20,6 +20,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         Then the validation request should fail
         And the error message should be "Please specify a number of tickets greater than zero"
 
+    @validation @isolated
     Scenario: Various request scenarios
         Given a request has been created
         And the first name is set to <first_name> with neither <unused_variable_1> nor <unused_variable_2> being used

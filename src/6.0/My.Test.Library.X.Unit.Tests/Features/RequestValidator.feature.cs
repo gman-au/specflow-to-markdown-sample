@@ -186,6 +186,8 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Xunit.SkippableTheoryAttribute(DisplayName="Various request scenarios")]
         [Xunit.TraitAttribute("FeatureTitle", "RequestValidator")]
         [Xunit.TraitAttribute("Description", "Various request scenarios")]
+        [Xunit.TraitAttribute("Category", "validation")]
+        [Xunit.TraitAttribute("Category", "isolated")]
         [Xunit.InlineDataAttribute("John", "Smith", "10", "12", "1", new string[0])]
         [Xunit.InlineDataAttribute("Paul", "Jones", "15", "13", "1", new string[0])]
         [Xunit.InlineDataAttribute("Mary", "Sue", "1", "14", "1", new string[0])]
@@ -196,7 +198,14 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
         [Xunit.InlineDataAttribute("Jack", "Smith", "5", "40", "1", new string[0])]
         public virtual void VariousRequestScenarios(string first_Name, string last_Name, string number_Of_Tickets, string unused_Variable_1, string unused_Variable_2, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "validation",
+                    "isolated"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("first_name", first_Name);
             argumentsOfScenario.Add("last_name", last_Name);
@@ -204,7 +213,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
             argumentsOfScenario.Add("unused_variable_1", unused_Variable_1);
             argumentsOfScenario.Add("unused_variable_2", unused_Variable_2);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Various request scenarios", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 23
+#line 24
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -224,25 +233,25 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
             else
             {
                 this.ScenarioStart();
-#line 24
+#line 25
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 25
+#line 26
         testRunner.And(string.Format("the first name is set to {0} with neither {1} nor {2} being used", first_Name, unused_Variable_1, unused_Variable_2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 27
         testRunner.And(string.Format("the last name is set to {0}", last_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
+#line 28
         testRunner.And(string.Format("the tickets requested are set to {0}", number_Of_Tickets), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 28
+#line 29
         testRunner.When("the validation request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 30
         testRunner.Then("the validation request should succeed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 30
+#line 31
         testRunner.And("there should be no error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -259,7 +268,7 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
                     "tickets"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("An inconclusive test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 44
+#line 45
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -279,13 +288,13 @@ You can find some additional SpecFlow markdown documentation [here](https://docs
             else
             {
                 this.ScenarioStart();
-#line 45
+#line 46
         testRunner.Given("a request has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 46
+#line 47
         testRunner.When("the validation request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 47
+#line 48
         testRunner.Then("the validation test should be inconclusive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
